@@ -1,0 +1,47 @@
+:root{--bg:#0F172A;--card:#1E293B;--line:#334155;--main:#8B5CF6;--bright:#A78BFA;--blue:#3B82F6;--text:#fff;--muted:#CBD5E1}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% -10%,#2a1f5c,var(--bg) 55%);color:var(--text);font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;overflow-x:hidden}
+.hero{text-align:center;padding:28px 16px 8px}
+.hero h1{margin:0;font-size:clamp(2rem,6vw,3.2rem);letter-spacing:.04em;background:linear-gradient(90deg,var(--bright),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{margin:6px 0 0;color:var(--muted)}
+.layout{display:grid;grid-template-columns:minmax(280px,360px) 1fr;gap:20px;max-width:1100px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.history{grid-column:1/-1}
+h2{margin:0 0 14px;font-size:1.15rem}
+.badge{font-size:.8rem;background:var(--main);border-radius:999px;padding:2px 10px;margin-left:6px}
+.add-row{display:flex;gap:8px}
+input[type=text]{flex:1;min-width:0;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);font-size:1rem}
+input:disabled,.btn:disabled{opacity:.5;cursor:not-allowed}
+:focus-visible{outline:3px solid var(--bright);outline-offset:2px}
+.btn{border:0;border-radius:12px;padding:12px 18px;font-size:1rem;font-weight:700;color:var(--text);cursor:pointer;min-height:44px;transition:transform .15s,filter .15s}
+.btn:not(:disabled):hover{transform:translateY(-2px);filter:brightness(1.12)}
+.btn-primary{background:linear-gradient(135deg,var(--main),var(--blue))}
+.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--muted)}
+.btn-small{padding:6px 12px;min-height:36px;font-size:.9rem;background:var(--line)}
+.btn-danger{background:#7f1d1d}
+.error{min-height:1.4em;margin:8px 0;color:#FCA5A5;font-size:.9rem}
+.item-list,.history-list{list-style:none;margin:0 0 14px;padding:0}
+.item-list li{display:flex;align-items:center;gap:8px;padding:8px 10px;margin-bottom:8px;background:var(--bg);border-radius:12px}
+.item-list .name{flex:1;min-width:0;overflow-wrap:anywhere}
+.item-list .dot{width:14px;height:14px;border-radius:50%;flex:none}
+.stage{display:flex;flex-direction:column;align-items:center;gap:20px}
+.wheel-wrap{position:relative;width:100%;max-width:520px}
+#wheel{display:block;width:100%;height:auto;aspect-ratio:1;border-radius:50%;box-shadow:0 0 0 8px #0b1224,0 0 0 12px var(--main),0 18px 50px rgba(139,92,246,.45)}
+.pointer{position:absolute;top:-14px;left:50%;transform:translateX(-50%);z-index:2;border-left:20px solid transparent;border-right:20px solid transparent;border-top:42px solid #FBBF24;filter:drop-shadow(0 4px 4px rgba(0,0,0,.5))}
+.btn-spin{width:100%;max-width:360px;padding:18px;font-size:1.4rem;background:linear-gradient(135deg,var(--main),#D946EF);box-shadow:0 8px 24px rgba(139,92,246,.5)}
+.history-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.history-head h2{margin:0}
+.history-list li{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;margin-bottom:6px;background:var(--bg);border-radius:10px}
+.history-list .time{color:var(--muted);font-size:.9rem;white-space:nowrap}
+.empty{color:var(--muted);text-align:center}
+.overlay{position:fixed;inset:0;background:rgba(2,6,23,.75);display:flex;align-items:center;justify-content:center;padding:16px;z-index:10}
+.overlay[hidden]{display:none}
+.dialog{position:relative;overflow:hidden;width:100%;max-width:400px;text-align:center;background:var(--card);border:2px solid var(--main);border-radius:24px;padding:32px 24px;box-shadow:0 0 60px rgba(139,92,246,.6);animation:pop .35s ease-out}
+.dialog h2{font-size:1.8rem}
+.result{font-size:2rem;font-weight:800;color:#FBBF24;margin:8px 0 22px;overflow-wrap:anywhere}
+@keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+.confetti{position:absolute;inset:0;pointer-events:none}
+.confetti span{position:absolute;top:-12px;width:8px;height:14px;border-radius:2px;animation:fall 2.2s linear forwards}
+@keyframes fall{to{transform:translateY(460px) rotate(540deg);opacity:0}}
+@media (max-width:760px){.layout{grid-template-columns:1fr}.stage{order:-1}.card{padding:16px}.history-list li{flex-direction:column;gap:2px}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition:none!important}}
