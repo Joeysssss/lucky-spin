@@ -2,9 +2,12 @@
 
 > 讓命運替你做決定！一個輕量、流暢、現代深色系風格且支援無障礙設計的原生 HTML5 / CSS3 / JavaScript 命運大轉盤應用。
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?logo=githubpages&logoColor=white)](https://joeysssss.github.io/lucky-spin/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Vanilla JS](https://img.shields.io/badge/Vanilla-JS-F7DF1E?logo=javascript&logoColor=black)](script.js)
 [![HTML5 Canvas](https://img.shields.io/badge/HTML5-Canvas-E34F26?logo=html5&logoColor=white)](index.html)
+
+🔗 **線上體驗 Demo**：[https://joeysssss.github.io/lucky-spin/](https://joeysssss.github.io/lucky-spin/)
 
 ---
 
